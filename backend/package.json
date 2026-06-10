@@ -1,0 +1,9 @@
+{
+  "name": "appbit-backend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Backend MVP App BiT",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
