@@ -1,1 +1,5 @@
-# S06-26-AB-EQUIPO-31-
+*Run*
+```npm install```
+*After*
+```npm run dev```
+
