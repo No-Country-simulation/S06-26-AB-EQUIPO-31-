@@ -1,0 +1,25 @@
+# Ambiente virtual
+.venv/
+venv/
+
+# Variáveis de ambiente — NUNCA subir para o repositório
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Testes
+.pytest_cache/
+.coverage
+htmlcov/
+
+# IDEs
+.vscode/
+.idea/
+
+# Sistema operativo
+.DS_Store
