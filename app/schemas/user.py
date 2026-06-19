@@ -76,3 +76,15 @@ class RegisterResponse(BaseModel):
     token:   str
     user:    UserResponse
     profile: UserProfileResponse
+    
+class LoginRequest(BaseModel):
+    """Dados enviados pelo utilizador no login."""
+    email:    EmailStr
+    password: str
+    model_config = {"str_strip_whitespace": True}
+
+class LoginResponse(BaseModel):
+    """Resposta do login — token + dados básicos."""
+    token:   str
+    user:    UserResponse
+    profile: UserProfileResponse
