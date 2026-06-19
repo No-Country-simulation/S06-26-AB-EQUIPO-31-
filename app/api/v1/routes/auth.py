@@ -1,12 +1,14 @@
 # =============================================================================
-# app/api/v1/routes/auth.py
-# Camada HTTP — só recebe, delega ao service e devolve
+# app/api/v1/routes/auth.py — substitui o ficheiro completo
+# Login volta a receber JSON — sem OAuth2PasswordRequestForm
 # =============================================================================
 from fastapi import APIRouter, Depends, status
 from sqlalchemy.orm import Session
+
 from app.core.database import get_db
 from app.schemas.user import UserCreate, RegisterResponse, LoginRequest, LoginResponse
 from app.services.auth_service import AuthService
+
 router = APIRouter(prefix="/auth", tags=["Authentication"])
 
 
@@ -17,11 +19,8 @@ router = APIRouter(prefix="/auth", tags=["Authentication"])
     summary="Registo de novo utilizador",
 )
 def register(data: UserCreate, db: Session = Depends(get_db)):
-    """
-    Cria conta com dados pessoais e profissionais.
-    Devolve token JWT + perfil criado.
-    """
     return AuthService(db).register(data)
+
 
 @router.post(
     "/login",
@@ -31,7 +30,7 @@ def register(data: UserCreate, db: Session = Depends(get_db)):
 )
 def login(data: LoginRequest, db: Session = Depends(get_db)):
     """
-    Autentica o utilizador com email e password.
-    Devolve token JWT + perfil.
+    Envia email e password como JSON.
+    Devolve token JWT para usar nas rotas protegidas.
     """
     return AuthService(db).login(data)

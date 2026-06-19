@@ -61,5 +61,13 @@ class AuthService:
             user=UserResponse.model_validate(user),
             profile=UserProfileResponse.model_validate(user.profile),
         )
-        
     
+    def login_form(self, email: str, password: str) -> LoginResponse:
+        """
+        Método chamado pelo Swagger via OAuth2PasswordRequestForm.
+        'username' no form = email na nossa plataforma.
+        """
+        from app.schemas.user import LoginRequest
+        return self.login(LoginRequest(email=email, password=password))
+
+        
