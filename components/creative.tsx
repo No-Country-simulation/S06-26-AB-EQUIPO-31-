@@ -1,6 +1,8 @@
 "use client"
 
 import { useEffect, useState } from "react"
+//import logo from "../assets/longo.png"
+//import ShowIcon from "@/components/show-icon"
 import { motion, AnimatePresence } from "framer-motion"
 import {
   Award,
@@ -58,6 +60,7 @@ import { ScrollArea } from "@/components/ui/scroll-area"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 import { cn } from "@/lib/utils"
+import ShowIcon from "./show-icon"
 
 // Sample data for apps
 const apps = [
@@ -587,11 +590,11 @@ export function DesignaliCreative() {
         <div className="flex h-full flex-col">
           <div className="p-4">
             <div className="flex items-center gap-3">
-              <div className="flex aspect-square size-10 items-center justify-center rounded-2xl bg-gradient-to-br from-purple-600 to-blue-600 text-white">
-                <Wand2 className="size-5" />
+              <div className="flex aspect-square size-10 items-center justify-center rounded-2xl bg-gradient-to-br">
+               <ShowIcon/>
               </div>
               <div>
-                <h2 className="font-semibold">Designali</h2>
+                <h2 className="font-semibold">Appbit</h2>
                 <p className="text-xs text-muted-foreground">Creative Suite</p>
               </div>
             </div>
@@ -789,7 +792,7 @@ export function DesignaliCreative() {
                       <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
                         <div className="space-y-4">
                           <Badge className="bg-white/20 text-white hover:bg-white/30 rounded-xl">Premium</Badge>
-                          <h2 className="text-3xl font-bold">Welcome to DesignAli Creative Suite</h2>
+                          <h2 className="text-3xl font-bold">Welcome to Appbit</h2>
                           <p className="max-w-[600px] text-white/80">
                             Unleash your creativity with our comprehensive suite of professional design tools and
                             resources.
